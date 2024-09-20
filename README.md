@@ -30,4 +30,8 @@ Reactは、JavaScriptというプログラミング言語をベースとした�
 <htttps://nodejs.org/ja>
 
 # 最後に
-あとは、
+
+あとは、下のコマンドを実行して、コードファイルを自分のパソコン上にコピーしたら、環境構築は多分大丈夫だと思います。。
+```
+git clone git@github.com:taishi29/com_checker.git
+```
