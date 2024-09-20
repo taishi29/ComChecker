@@ -10,10 +10,8 @@ ChatGPTによると
 ### 1. pythonをダウンロードする
 Pythonをダウンロードしていない方は、以下のリンクからダウンロードできます。
 <https://www.python.org/downloads/>
-:::note warn
-注意
+### ⚠ 注意
 また、pythonをインストールする際に、以下の"Add python to PATH"のチェックを入れてください。
-:::
 ![image](https://github.com/user-attachments/assets/e40e525a-b3fd-41a9-a16b-4f558f97a3f1)
 
 
