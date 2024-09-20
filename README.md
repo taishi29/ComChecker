@@ -2,9 +2,7 @@
 # フレームワークとは？
 ChatGPTによると  
 >Webサイトにおけるフレームワークとは、Web開発を効率的に行うために用意されたプログラムやライブラリの集まりである。これにより、ゼロからすべてを開発する手間が省け、基本的な機能や構造を簡単に実装できるようになる.
-
 >**Django**は、Pythonで書かれたバックエンド（サーバーサイド）向けのフレームワークであり、データベース管理やユーザー認証など、Webサイトの裏側の処理を得意とする。  
-
 >**React**は、JavaScriptで書かれたフロントエンド（ユーザー側）向けのライブラリで、Webページの見た目やインタラクティブな要素を効率的に管理するために使用される。  
 
 # 環境構築の仕方
@@ -14,8 +12,9 @@ Pythonをダウンロードしていない方は、以下のリンクからダ�
 <https://www.python.org/downloads/>
 :::note warn
 また、pythonをインストールする際に、以下の"Add python to PATH"のチェックを入れてください。
-![image](https://github.com/user-attachments/assets/e40e525a-b3fd-41a9-a16b-4f558f97a3f1)
 :::
+![image](https://github.com/user-attachments/assets/e40e525a-b3fd-41a9-a16b-4f558f97a3f1)
+
 
 
 ### 2. VScodeをダウンロードする
