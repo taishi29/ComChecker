@@ -26,7 +26,7 @@ pip install Django
 ## Reactの環境構築
 ### Node.jsの準備
 Reactは、JavaScriptというプログラミング言語をベースとした、Webフレームワークです。そのため、JabaScriptを快適に使えるソフトウェア？を入れる必要があるみたいです(正直よくわからん)  
-以下のURLからNode.jsを準備しましょう。
+以下のURLからNode.jsを準備しましょう。  
 <htttps://nodejs.org/ja>
 
 # 最後に
