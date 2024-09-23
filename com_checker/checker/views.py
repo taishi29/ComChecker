@@ -1,20 +1,31 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Avg
 from .models import Company, CompanyImage
+import random
 
-# 企業を表示するビュー
+# 企業をランダムに表示するビュー（既に表示した企業を除外）
 def show_company(request, index):
-    companies = list(Company.objects.all())  # クエリセットをリストに変換
-    if index < len(companies):
-        company = companies[index]
+    # セッションから既に表示された企業のIDリストを取得、なければ空リスト
+    shown_companies = request.session.get('shown_companies', [])
+    
+    # 既に表示された企業を除外してランダムな順序で取得
+    companies = Company.objects.exclude(id__in=shown_companies).order_by('?')
+    
+    if companies.exists():
+        company = companies.first()
+        
+        # 現在の企業IDをセッションに保存
+        shown_companies.append(company.id)
+        request.session['shown_companies'] = shown_companies
+        request.session.modified = True  # セッションの変更を明示
         
         # 企業に関連する画像を取得
         images = CompanyImage.objects.filter(company=company)
 
         return render(request, 'checker/company.html', {'company': company, 'images': images, 'index': index})
     else:
-        # インデックスが範囲外の場合404エラーページを返す
-        return render(request, '404.html', status=404)
+        # もう表示する企業がない場合、結果ページにリダイレクト
+        return redirect('show_result')
 
 
 # Good/Bad評価を処理するビュー
