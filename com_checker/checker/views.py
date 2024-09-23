@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.db.models import Avg
 from .models import Company, CompanyImage
 
+# 企業を表示するビュー
 def show_company(request, index):
     companies = list(Company.objects.all())  # クエリセットをリストに変換
     if index < len(companies):
@@ -27,7 +28,7 @@ def evaluate_company(request):
         if choice == 'good':
             if 'good_companies' not in request.session:
                 request.session['good_companies'] = []
-            request.session['good_companies'].append(company_id)
+            request.session['good_companies'].append(int(company_id))  # 会社IDを整数で保存
             request.session.modified = True  # セッションが変更されたことを示す
 
         # 次の企業に進む
@@ -65,5 +66,11 @@ def show_result(request):
             best_score = score
             best_match = company
 
+    # 最適な企業に関連する画像を取得
+    best_match_images = CompanyImage.objects.filter(company=best_match)
+
     # 結果を表示
-    return render(request, 'result.html', {'best_match': best_match})
+    return render(request, 'checker/result.html', {
+        'best_match': best_match,
+        'images': best_match_images
+    })

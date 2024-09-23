@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+</head>
+<body>
+    <h1>Best Match</h1>
+    {% if best_match %}
+        <p>Company Name: {{ best_match.name }}</p>
+        <p>Industry: {{ best_match.industry }}</p>
+        <p>Location: {{ best_match.location }}</p>
+        <p>Work-life balance rating: {{ best_match.work_life_balance_rating }}</p>
+        <p>Compensation rating: {{ best_match.compensation_rating }}</p>
+        <p>Career advancement rating: {{ best_match.career_advancement_rating }}</p>
+        <p>Management relationship rating: {{ best_match.management_relationship_rating }}</p>
+        <p>Work environment rating: {{ best_match.work_environment_rating }}</p>
+        
+        <!-- 企業の画像を表示 -->
+        <h2>Images</h2>
+        <div>
+            {% for image in images %}
+                <img src="{{ image.image.url }}" alt="Company Image" style="max-width: 300px;">
+            {% endfor %}
+        </div>
+
+    {% else %}
+        <p>No matching company found.</p>
+    {% endif %}
+</body>
+</html>
