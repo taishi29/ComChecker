@@ -35,3 +35,6 @@ Reactは、JavaScriptというプログラミング言語をベースとした�
 ```
 git clone git@github.com:taishi29/com_checker.git
 ```
+
+# 追記
+データベースはSQLiteを利用しています。
